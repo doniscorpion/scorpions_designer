@@ -40,12 +40,36 @@
       <h1 class="h2 glow-line">Depoimentos e formulário</h1>
       <p class="lead">Os depoimentos reais foram mantidos e o formulário continua em modo demonstrativo para GitHub Pages.</p>
     </div>
+
     <div class="two-col">
       <section>
         <div id="reviews-grid" class="cards-grid"></div>
       </section>
+
       <section class="glass panel">
-        ...
+        <h2 class="h3">Formulário de feedback</h2>
+        <p class="muted">
+          Este formulário salva localmente no navegador como demonstração.
+          Para uso real no GitHub Pages, integre com Formspree ou serviço semelhante.
+        </p>
+
+        <form id="feedback-form" class="form-stack">
+          <div>
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
+          </div>
+
+          <div>
+            <label for="mensagem">Comentário</label>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva um feedback" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Enviar feedback
+          </button>
+        </form>
+
+        <div id="feedback-list" class="feedback-list"></div>
       </section>
     </div>
   </div>
@@ -53,22 +77,8 @@
 
 <script src="assets/js/site.js"></script>
 <script>
-   setupFeedbackForm('feedback-form','feedback-list');
+  renderReviews('reviews-grid');
+  setupFeedbackForm('feedback-form', 'feedback-list');
 </script>
-</main>
-
-  
-    <footer class="footer">
-      <div class="container footer-inner">
-        <p>© 2026 Scorpions Designer & Marketing. Todos os direitos reservados.</p>
-        <p>Site estático preparado para GitHub Pages.</p>
-      </div>
-    </footer>
-    <a class="whatsapp-float" href="https://wa.me/5517981059612?text=Olá!%20Vi%20o%20site%20da%20Scorpions%20Designer%20&%20Marketing%20e%20quero%20um%20orçamento." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
-    <script src="assets/js/site.js"></script>
-   renderReviews('reviews-grid');
-    
 </body>
 </html>
