@@ -45,24 +45,13 @@
         <div id="reviews-grid" class="cards-grid"></div>
       </section>
       <section class="glass panel">
-        <h2 class="h3">Formulário de feedback</h2>
-        <p class="muted">Este formulário salva localmente no navegador como demonstração. Para receber comentários reais no GitHub Pages, depois será necessário integrar com Formspree ou outro serviço externo.</p>
-        <form id="feedback-form" class="feedback-form" style="margin-top:20px">
-          <div class="field">
-            <label for="nome">Nome</label>
-            <input id="nome" name="nome" class="input" type="text" placeholder="Seu nome" required>
-          </div>
-          <div class="field">
-            <label for="mensagem">Comentário</label>
-            <textarea id="mensagem" name="mensagem" class="textarea" rows="5" placeholder="Escreva um feedback" required></textarea>
-          </div>
-          <button class="btn" type="submit"><i class="fa-solid fa-paper-plane"></i>Enviar feedback</button>
-        </form>
-        <div id="feedback-list" style="display:grid;gap:12px;margin-top:20px"></div>
+        ...
       </section>
     </div>
   </div>
-  <script src="assets/js/site.js"></script>
+</main>
+
+<script src="assets/js/site.js"></script>
 <script>
   renderReviews('reviews-grid');
   setupFeedbackForm('feedback-form','feedback-list');
