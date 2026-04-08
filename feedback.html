@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Somos uma empresa de designer gráfico com experiência de mais de 40 anos na área de comunicação visual e marketing digital. Desenvolvemos conteúdo de artes gráficas, seja digital ou física. Nossa especialidade é o desenvolvimento de identidade visual empresarial e de marcas." />
+  <meta name="theme-color" content="#050816" />
+  <title>Feedback | Scorpions Designer &amp; Marketing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand">
+        <img src="https://i.postimg.cc/ZYfWFpmx/LOGO_SCORPIONS_2024_02.png" alt="Logo Scorpions Designer & Marketing">
+        <div>
+          <div class="brand-title">SCORPIONS</div>
+          <div class="brand-sub">Designer & Marketing</div>
+        </div>
+      </a>
+      <nav class="nav-links"><a href="index.html" class="">Início</a><a href="perfil.html" class="">Perfil</a><a href="empresa.html" class="">Empresa</a><a href="servicos.html" class="">Produtos e Serviços</a><a href="portfolio.html" class="">Portfólio</a><a href="feedback.html" class="active">Feedback</a><a href="contato-redes.html" class="">Contato e Redes</a><a href="localizacao.html" class="">Localização</a></nav>
+      <div class="nav-actions">
+        <a href="portfolio.html" class="btn-ghost hidden-mobile">Ver portfólio</a>
+        <a href="https://wa.me/5517981059612?text=Olá!%20Vi%20o%20site%20da%20Scorpions%20Designer%20&%20Marketing%20e%20quero%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="btn">
+          <i class="fa-brands fa-whatsapp"></i><span class="hidden-mobile">Orçamento</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  
+<main class="section">
+  <div class="container">
+    <div class="section-header">
+      <p class="badge">Página de Feedback</p>
+      <h1 class="h2 glow-line">Depoimentos e formulário</h1>
+      <p class="lead">Os depoimentos reais foram mantidos e o formulário continua em modo demonstrativo para GitHub Pages.</p>
+    </div>
+    <div class="two-col">
+      <section>
+        <div id="reviews-grid" class="cards-grid"></div>
+      </section>
+      <section class="glass panel">
+        <h2 class="h3">Formulário de feedback</h2>
+        <p class="muted">Este formulário salva localmente no navegador como demonstração. Para receber comentários reais no GitHub Pages, depois será necessário integrar com Formspree ou outro serviço externo.</p>
+        <form id="feedback-form" class="feedback-form" style="margin-top:20px">
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" class="input" type="text" placeholder="Seu nome" required>
+          </div>
+          <div class="field">
+            <label for="mensagem">Comentário</label>
+            <textarea id="mensagem" name="mensagem" class="textarea" rows="5" placeholder="Escreva um feedback" required></textarea>
+          </div>
+          <button class="btn" type="submit"><i class="fa-solid fa-paper-plane"></i>Enviar feedback</button>
+        </form>
+        <div id="feedback-list" style="display:grid;gap:12px;margin-top:20px"></div>
+      </section>
+    </div>
+  </div>
+  <script>
+    renderReviews('reviews-grid');
+    setupFeedbackForm('feedback-form','feedback-list');
+  </script>
+</main>
+
+  
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© 2026 Scorpions Designer & Marketing. Todos os direitos reservados.</p>
+        <p>Site estático preparado para GitHub Pages.</p>
+      </div>
+    </footer>
+    <a class="whatsapp-float" href="https://wa.me/5517981059612?text=Olá!%20Vi%20o%20site%20da%20Scorpions%20Designer%20&%20Marketing%20e%20quero%20um%20orçamento." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <script src="assets/js/site.js"></script>
+    
+</body>
+</html>

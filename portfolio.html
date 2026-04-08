@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Somos uma empresa de designer gráfico com experiência de mais de 40 anos na área de comunicação visual e marketing digital. Desenvolvemos conteúdo de artes gráficas, seja digital ou física. Nossa especialidade é o desenvolvimento de identidade visual empresarial e de marcas." />
+  <meta name="theme-color" content="#050816" />
+  <title>Portfólio | Scorpions Designer &amp; Marketing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand">
+        <img src="https://i.postimg.cc/ZYfWFpmx/LOGO_SCORPIONS_2024_02.png" alt="Logo Scorpions Designer & Marketing">
+        <div>
+          <div class="brand-title">SCORPIONS</div>
+          <div class="brand-sub">Designer & Marketing</div>
+        </div>
+      </a>
+      <nav class="nav-links"><a href="index.html" class="">Início</a><a href="perfil.html" class="">Perfil</a><a href="empresa.html" class="">Empresa</a><a href="servicos.html" class="">Produtos e Serviços</a><a href="portfolio.html" class="active">Portfólio</a><a href="feedback.html" class="">Feedback</a><a href="contato-redes.html" class="">Contato e Redes</a><a href="localizacao.html" class="">Localização</a></nav>
+      <div class="nav-actions">
+        <a href="portfolio.html" class="btn-ghost hidden-mobile">Ver portfólio</a>
+        <a href="https://wa.me/5517981059612?text=Olá!%20Vi%20o%20site%20da%20Scorpions%20Designer%20&%20Marketing%20e%20quero%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="btn">
+          <i class="fa-brands fa-whatsapp"></i><span class="hidden-mobile">Orçamento</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  
+<main class="section">
+  <div class="container">
+    <div class="split-action" style="margin-bottom:28px">
+      <div style="max-width:760px">
+        <p class="badge">Página de Portfólio</p>
+        <h1 class="h2 glow-line">Portfólio com capacidade para 30 inserções</h1>
+        <p class="lead">Os trabalhos atuais foram preservados e a estrutura foi reduzida para 30 espaços totais. Você continua podendo substituir ou completar os espaços restantes com novas imagens e vídeos.</p>
+      </div>
+      <div class="portfolio-controls" id="portfolio-filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="image">Imagens</button>
+        <button class="filter-btn" data-filter="video">Vídeos</button>
+        <button class="filter-btn" data-filter="Logo">Logos</button>
+        <button class="filter-btn" data-filter="Mídia Social">Mídias Sociais</button>
+        <button class="filter-btn" data-filter="Cartão Digital">Cartões Digitais</button>
+      </div>
+    </div>
+    <div id="portfolio-grid" class="portfolio-grid"></div>
+    <section class="section-tight">
+      <div class="glass panel split-action">
+        <div style="max-width:760px">
+          <h2 class="h3">Como adicionar novos trabalhos</h2>
+          <p class="lead" style="font-size:1rem">Os arquivos continuam apontando para a pasta <strong>assets/portfolio</strong>. A diferença é que agora o limite visual padrão é 30 espaços, em vez de 100.</p>
+        </div>
+        <div class="notice"><strong>Capacidade atual:</strong><br>23 itens preenchidos + 7 espaços prontos.</div>
+      </div>
+    </section>
+  </div>
+  <script>
+    renderPortfolio('portfolio-grid');
+    activatePortfolioFilters('portfolio-grid','portfolio-filters');
+  </script>
+</main>
+
+  
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© 2026 Scorpions Designer & Marketing. Todos os direitos reservados.</p>
+        <p>Site estático preparado para GitHub Pages.</p>
+      </div>
+    </footer>
+    <a class="whatsapp-float" href="https://wa.me/5517981059612?text=Olá!%20Vi%20o%20site%20da%20Scorpions%20Designer%20&%20Marketing%20e%20quero%20um%20orçamento." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <script src="assets/js/site.js"></script>
+    
+</body>
+</html>
