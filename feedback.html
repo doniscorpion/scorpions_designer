@@ -1,351 +1,706 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Somos uma empresa de designer gráfico com experiência de mais de 40 anos na área de comunicação visual e marketing digital. Desenvolvemos conteúdo de artes gráficas, seja digital ou física. Nossa especialidade é o desenvolvimento de identidade visual empresarial e de marcas." />
-  <meta name="theme-color" content="#050816" />
-  <title>Feedback | Scorpions Designer &amp; Marketing</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback | Scorpions Designer & Marketing</title>
+  <meta name="description" content="Envie seu feedback para a Scorpions Designer & Marketing.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <style>
+    :root {
+      --fb-bg: #0b1120;
+      --fb-surface: rgba(255, 255, 255, 0.06);
+      --fb-surface-2: rgba(255, 255, 255, 0.04);
+      --fb-border: rgba(255, 255, 255, 0.10);
+      --fb-text: #ffffff;
+      --fb-muted: #cbd5e1;
+      --fb-muted-2: #94a3b8;
+      --fb-primary: #2563eb;
+      --fb-primary-2: #f97316;
+      --fb-shadow: 0 18px 42px rgba(0, 0, 0, 0.30);
+      --fb-radius: 22px;
+      --fb-shell: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      color: var(--fb-text);
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.16), transparent 28%),
+        linear-gradient(180deg, #08111f 0%, #0b1120 100%);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .fb-shell {
+      width: min(100% - 32px, var(--fb-shell));
+      margin: 0 auto;
+    }
+
+    .fb-topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(8, 17, 31, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .fb-topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 78px;
+    }
+
+    .fb-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      white-space: nowrap;
+    }
+
+    .fb-brand-mark {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--fb-primary), var(--fb-primary-2));
+      box-shadow: 0 12px 25px rgba(37, 99, 235, 0.28);
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .fb-brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .fb-brand-text strong {
+      font-size: 0.96rem;
+      font-weight: 800;
+    }
+
+    .fb-brand-text span {
+      font-size: 0.78rem;
+      color: var(--fb-muted);
+      font-weight: 600;
+      margin-top: 5px;
+    }
+
+    .fb-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .fb-nav a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--fb-muted);
+      font-size: 0.94rem;
+      font-weight: 600;
+      transition: 0.25s ease;
+    }
+
+    .fb-nav a:hover,
+    .fb-nav a.fb-active {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .fb-cta,
+    .fb-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      background: linear-gradient(135deg, var(--fb-primary), var(--fb-primary-2));
+      color: #fff;
+      font-weight: 700;
+      transition: 0.25s ease;
+    }
+
+    .fb-cta {
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      box-shadow: 0 14px 28px rgba(37, 99, 235, 0.28);
+      white-space: nowrap;
+    }
+
+    .fb-cta:hover,
+    .fb-submit:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.04);
+    }
+
+    .fb-hero {
+      padding: 72px 0 32px;
+    }
+
+    .fb-hero-card,
+    .fb-card {
+      border: 1px solid var(--fb-border);
+      box-shadow: var(--fb-shadow);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .fb-hero-card {
+      position: relative;
+      overflow: hidden;
+      padding: 38px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+    }
+
+    .fb-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.12);
+      border: 1px solid rgba(37, 99, 235, 0.24);
+      color: #bfdbfe;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .fb-hero h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .fb-hero p,
+    .fb-card-text,
+    .fb-note,
+    .fb-empty-review,
+    .fb-footer {
+      color: var(--fb-muted);
+      line-height: 1.7;
+    }
+
+    .fb-hero p {
+      margin: 0;
+      max-width: 760px;
+      font-size: 1.02rem;
+      line-height: 1.8;
+    }
+
+    .fb-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .fb-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      font-weight: 700;
+      transition: 0.25s ease;
+    }
+
+    .fb-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.09);
+      transform: translateY(-1px);
+    }
+
+    .fb-main {
+      padding-bottom: 70px;
+    }
+
+    .fb-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .fb-card {
+      padding: 28px;
+      border-radius: var(--fb-radius);
+      background: linear-gradient(135deg, var(--fb-surface), var(--fb-surface-2));
+    }
+
+    .fb-card h2 {
+      margin: 0 0 10px;
+      font-size: 1.45rem;
+      line-height: 1.2;
+    }
+
+    .fb-card-text {
+      margin: 0 0 22px;
+    }
+
+    .fb-reviews-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .fb-empty-review {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px dashed rgba(255,255,255,0.12);
+    }
+
+    .fb-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .fb-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .fb-field label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #e5edf7;
+    }
+
+    .fb-input,
+    .fb-textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      font: inherit;
+      outline: none;
+      transition: 0.25s ease;
+    }
+
+    .fb-input::placeholder,
+    .fb-textarea::placeholder {
+      color: var(--fb-muted-2);
+    }
+
+    .fb-input:focus,
+    .fb-textarea:focus {
+      border-color: rgba(37, 99, 235, 0.60);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.14);
+      transform: translateY(-1px);
+    }
+
+    .fb-textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    .fb-rating-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 2px;
+    }
+
+    .fb-rating-pill {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .fb-rating-pill input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .fb-rating-pill span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 76px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #e2e8f0;
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+
+    .fb-rating-pill input:checked + span {
+      color: #fff;
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--fb-primary), var(--fb-primary-2));
+      box-shadow: 0 14px 28px rgba(37, 99, 235, 0.24);
+    }
+
+    .fb-submit {
+      width: 100%;
+      min-height: 54px;
+      margin-top: 8px;
+      border-radius: 18px;
+      font: inherit;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      cursor: pointer;
+      box-shadow: 0 16px 32px rgba(37, 99, 235, 0.25);
+    }
+
+    .fb-submit:disabled {
+      opacity: 0.78;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .fb-status {
+      min-height: 24px;
+      margin: 16px 0 0;
+      color: var(--fb-muted);
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .fb-status.success { color: #86efac; }
+    .fb-status.error { color: #fdba74; }
+
+    .fb-note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.94rem;
+    }
+
+    .fb-footer {
+      padding: 26px 0 40px;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .fb-footer p { margin: 6px 0; }
+
+    @media (max-width: 1080px) {
+      .fb-topbar-inner {
+        flex-direction: column;
+        justify-content: center;
+        padding: 18px 0;
+      }
+
+      .fb-nav {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .fb-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .fb-shell {
+        width: min(100% - 20px, var(--fb-shell));
+      }
+
+      .fb-hero {
+        padding-top: 46px;
+      }
+
+      .fb-hero-card,
+      .fb-card {
+        padding: 22px 18px;
+      }
+
+      .fb-form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .fb-nav {
+        gap: 2px;
+      }
+
+      .fb-nav a {
+        padding: 9px 11px;
+        font-size: 0.88rem;
+      }
+
+      .fb-cta {
+        width: 100%;
+      }
+
+      .fb-rating-pill span {
+        min-width: 64px;
+        padding: 11px 12px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="noise"></div>
-  <header class="scorpions-header">
-  <div class="scorpions-header-bg">
-    <div class="scorpions-header-inner">
-      <nav class="scorpions-header-nav">
-        <a href="index.html" class="scorpions-nav-btn orange">Início</a>
-        <a href="perfil.html" class="scorpions-nav-btn blue">Perfil</a>
-        <a href="servicos.html" class="scorpions-nav-btn orange">Produtos e Serviços</a>
-        <a href="portfolio.html" class="scorpions-nav-btn blue">Portfólio</a>
-        <a href="feedback.html" class="scorpions-nav-btn orange">Feedback</a>
-        <a href="contato-redes.html" class="scorpions-nav-btn blue">Contato e Redes</a>
-        <a href="localizacao.html" class="scorpions-nav-btn blue">📍 Localização</a>
-        <a href="portfolio.html" class="scorpions-nav-btn black">Ver Portfólio</a>
-        <a href="https://wa.me/5517981059612?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Scorpions%20Designer%20%26%20Marketing%20e%20quero%20um%20or%C3%A7amento."
-           target="_blank"
-           rel="noopener noreferrer"
-           class="scorpions-nav-btn whatsapp">
-          Orçamento
-        </a>
+  <header class="fb-topbar">
+    <div class="fb-shell fb-topbar-inner">
+      <a class="fb-brand" href="index.html" aria-label="Scorpions Designer & Marketing">
+        <span class="fb-brand-mark">S</span>
+        <span class="fb-brand-text">
+          <strong>SCORPIONS Designer & Marketing</strong>
+          <span>Marca forte é aqui</span>
+        </span>
+      </a>
+
+      <nav class="fb-nav" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="perfil.html">Perfil</a>
+        <a href="empresa.html">Empresa</a>
+        <a href="servicos.html">Produtos e Serviços</a>
+        <a href="portfolio.html">Portfólio</a>
+        <a href="feedback.html" class="fb-active">Feedback</a>
+        <a href="contato-redes.html">Contato e Redes</a>
+        <a href="localizacao.html">Localização</a>
       </nav>
+
+      <a class="fb-cta" href="https://wa.me/5517981059612?text=Ol%C3%A1%2C%20gostaria%20de%20pedir%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i>
+        Orçamento
+      </a>
     </div>
-  </div>
-</header>
-  
-<main class="section">
-  <div class="container">
-    <div class="section-header">
-      <p class="badge">Página de Feedback</p>
-      <h1 class="h2 glow-line">Depoimentos e formulário</h1>
-      <p class="lead">Os depoimentos reais foram mantidos e o formulário continua em modo demonstrativo para GitHub Pages.</p>
-    </div>
+  </header>
 
-    <div class="two-col">
-      <section>
-        <div id="reviews-grid" class="cards-grid"></div>
-      </section>
+  <main class="fb-main">
+    <section class="fb-hero">
+      <div class="fb-shell">
+        <div class="fb-hero-card">
+          <div class="fb-kicker">
+            <i class="fa-solid fa-comments"></i>
+            Página de Feedback
+          </div>
 
-      <section class="glass panel feedback-panel">
-  <h2 class="h3">Formulário de feedback</h2>
-  <p class="muted">
-    Agora seu feedback pode ser enviado de forma real pelo site.
-    Preencha os campos abaixo.
-  </p>
+          <h1>Depoimentos e formulário</h1>
+          <p>
+            Sua opinião ajuda a fortalecer a apresentação da marca, melhorar a experiência do site
+            e aprimorar o atendimento. Nesta página, você pode visualizar depoimentos e enviar seu
+            feedback real diretamente pelo formulário.
+          </p>
 
-  <form
-    id="feedback-form"
-    class="feedback-form"
-    action="https://formspree.io/f/xnjoknje"
-    method="POST"
-  >
-    <input
-      type="hidden"
-      name="_subject"
-      value="Novo feedback - Scorpions Designer & Marketing"
-    >
+          <div class="fb-hero-actions">
+            <a class="fb-cta" href="portfolio.html">
+              <i class="fa-solid fa-briefcase"></i>
+              Ver portfólio
+            </a>
 
-    <div class="two-col feedback-two-col">
-      <div class="field">
-        <label for="nome">Nome</label>
-        <input
-          class="input"
-          id="nome"
-          name="nome"
-          type="text"
-          placeholder="Seu nome"
-          required
-        >
+            <a class="fb-btn-secondary" href="contato-redes.html">
+              <i class="fa-solid fa-envelope"></i>
+              Entrar em contato
+            </a>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="field">
-        <label for="email">E-mail</label>
-        <input
-          class="input"
-          id="email"
-          name="email"
-          type="email"
-          placeholder="seuemail@exemplo.com"
-          required
-        >
+    <section>
+      <div class="fb-shell">
+        <div class="fb-grid">
+          <article class="fb-card">
+            <h2>Depoimentos</h2>
+            <p class="fb-card-text">
+              Esta área mantém espaço para exibir comentários e avaliações já cadastradas no site.
+            </p>
+
+            <div id="reviews-grid" class="fb-reviews-grid">
+              <div class="fb-empty-review">Carregando depoimentos...</div>
+            </div>
+          </article>
+
+          <article class="fb-card">
+            <h2>Formulário de feedback</h2>
+            <p class="fb-card-text">
+              Preencha os campos abaixo. O envio será feito pelo Formspree, sem recarregar a página.
+            </p>
+
+            <form id="feedback-form" class="fb-form" action="https://formspree.io/f/xnjoknje" method="POST">
+              <input type="hidden" name="_subject" value="Novo feedback - Scorpions Designer & Marketing">
+
+              <div class="fb-form-grid">
+                <div class="fb-field">
+                  <label for="nome">Nome</label>
+                  <input class="fb-input" id="nome" name="nome" type="text" placeholder="Seu nome" required>
+                </div>
+
+                <div class="fb-field">
+                  <label for="email">E-mail</label>
+                  <input class="fb-input" id="email" name="email" type="email" placeholder="seuemail@exemplo.com" required>
+                </div>
+              </div>
+
+              <div class="fb-form-grid">
+                <div class="fb-field">
+                  <label for="telefone">Telefone</label>
+                  <input class="fb-input" id="telefone" name="telefone" type="text" placeholder="(17) 99999-9999">
+                </div>
+
+                <div class="fb-field">
+                  <label for="assunto">Assunto</label>
+                  <input class="fb-input" id="assunto" name="assunto" type="text" placeholder="Atendimento, site, serviço..." required>
+                </div>
+              </div>
+
+              <div class="fb-field">
+                <label>Avaliação</label>
+                <div class="fb-rating-group" role="radiogroup" aria-label="Avaliação">
+                  <label class="fb-rating-pill"><input type="radio" name="nota" value="5" required><span>5 ★</span></label>
+                  <label class="fb-rating-pill"><input type="radio" name="nota" value="4" required><span>4 ★</span></label>
+                  <label class="fb-rating-pill"><input type="radio" name="nota" value="3" required><span>3 ★</span></label>
+                  <label class="fb-rating-pill"><input type="radio" name="nota" value="2" required><span>2 ★</span></label>
+                  <label class="fb-rating-pill"><input type="radio" name="nota" value="1" required><span>1 ★</span></label>
+                </div>
+              </div>
+
+              <div class="fb-field">
+                <label for="mensagem">Comentário</label>
+                <textarea class="fb-textarea" id="mensagem" name="mensagem" rows="6" placeholder="Escreva seu feedback" required></textarea>
+              </div>
+
+              <button type="submit" class="fb-submit" id="feedback-submit-btn">
+                <i class="fa-solid fa-paper-plane"></i>
+                Enviar feedback
+              </button>
+
+              <p id="feedback-status" class="fb-status" aria-live="polite"></p>
+
+              <div class="fb-note">
+                Seu envio será processado pelo formulário integrado ao site.
+              </div>
+            </form>
+          </article>
+        </div>
       </div>
+    </section>
+  </main>
+
+  <footer class="fb-footer">
+    <div class="fb-shell">
+      <p>© 2026 Scorpions Designer & Marketing. Todos os direitos reservados.</p>
+      <p>Site estático preparado para GitHub Pages.</p>
     </div>
+  </footer>
 
-    <div class="two-col feedback-two-col">
-      <div class="field">
-        <label for="telefone">Telefone</label>
-        <input
-          class="input"
-          id="telefone"
-          name="telefone"
-          type="text"
-          placeholder="(17) 99999-9999"
-        >
-      </div>
+  <script src="assets/js/site.js"></script>
+  <script>
+    (function () {
+      const reviewsGrid = document.getElementById("reviews-grid");
+      const feedbackForm = document.getElementById("feedback-form");
+      const feedbackStatus = document.getElementById("feedback-status");
+      const feedbackSubmitBtn = document.getElementById("feedback-submit-btn");
+      const phoneInput = document.getElementById("telefone");
 
-      <div class="field">
-        <label for="assunto">Assunto</label>
-        <input
-          class="input"
-          id="assunto"
-          name="assunto"
-          type="text"
-          placeholder="Atendimento, site, serviço..."
-          required
-        >
-      </div>
-    </div>
-
-    <div class="field">
-      <label>Avaliação</label>
-      <div class="feedback-rating" role="radiogroup" aria-label="Avaliação">
-        <label class="rating-pill">
-          <input type="radio" name="nota" value="5" required>
-          <span>5 ★</span>
-        </label>
-
-        <label class="rating-pill">
-          <input type="radio" name="nota" value="4" required>
-          <span>4 ★</span>
-        </label>
-
-        <label class="rating-pill">
-          <input type="radio" name="nota" value="3" required>
-          <span>3 ★</span>
-        </label>
-
-        <label class="rating-pill">
-          <input type="radio" name="nota" value="2" required>
-          <span>2 ★</span>
-        </label>
-
-        <label class="rating-pill">
-          <input type="radio" name="nota" value="1" required>
-          <span>1 ★</span>
-        </label>
-      </div>
-    </div>
-
-    <div class="field">
-      <label for="mensagem">Comentário</label>
-      <textarea
-        class="textarea"
-        id="mensagem"
-        name="mensagem"
-        rows="6"
-        placeholder="Escreva seu feedback"
-        required
-      ></textarea>
-    </div>
-
-    <button type="submit" class="btn" id="feedback-submit-btn">
-      <i class="fa-solid fa-paper-plane"></i>
-      Enviar feedback
-    </button>
-
-    <p id="feedback-status" class="feedback-status" aria-live="polite"></p>
-  </form>
-
-  <div class="notice small feedback-note">
-    Seu envio será processado pelo formulário integrado ao site.
-  </div>
-</section>
-
-<style>
-  .feedback-panel .muted {
-    margin-bottom: 18px;
-    line-height: 1.7;
-  }
-
-  .feedback-two-col {
-    gap: 16px;
-    margin-bottom: 2px;
-  }
-
-  .feedback-panel .field label {
-    color: #e2e8f0;
-    font-weight: 700;
-    font-size: 0.96rem;
-  }
-
-  .feedback-panel .input,
-  .feedback-panel .textarea {
-    border-radius: 18px;
-    border: 1px solid rgba(255,255,255,0.10);
-    background: rgba(255,255,255,0.05);
-    color: #fff;
-    transition: .25s;
-  }
-
-  .feedback-panel .input::placeholder,
-  .feedback-panel .textarea::placeholder {
-    color: #94a3b8;
-  }
-
-  .feedback-panel .input:focus,
-  .feedback-panel .textarea:focus {
-    border-color: rgba(37,99,235,0.55);
-    box-shadow: 0 0 0 4px rgba(37,99,235,0.12);
-  }
-
-  .feedback-rating {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 4px;
-  }
-
-  .rating-pill {
-    position: relative;
-    cursor: pointer;
-  }
-
-  .rating-pill input {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .rating-pill span {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 78px;
-    padding: 12px 16px;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.12);
-    background: rgba(255,255,255,0.04);
-    color: #e2e8f0;
-    font-weight: 700;
-    transition: .25s;
-  }
-
-  .rating-pill input:checked + span {
-    background: linear-gradient(135deg, var(--primary), var(--primary-2));
-    border-color: transparent;
-    color: #fff;
-    box-shadow: 0 12px 24px rgba(37,99,235,0.25);
-  }
-
-  .feedback-panel .btn {
-    justify-content: center;
-    border: 0;
-    cursor: pointer;
-    margin-top: 6px;
-  }
-
-  .feedback-panel .btn:disabled {
-    opacity: .78;
-    cursor: not-allowed;
-  }
-
-  .feedback-status {
-    min-height: 24px;
-    margin: 14px 0 0;
-    font-weight: 700;
-    color: #cbd5e1;
-  }
-
-  .feedback-status.success {
-    color: #86efac;
-  }
-
-  .feedback-status.error {
-    color: #fdba74;
-  }
-
-  .feedback-note {
-    margin-top: 18px;
-  }
-
-  @media (max-width: 820px) {
-    .feedback-rating {
-      gap: 8px;
-    }
-
-    .rating-pill span {
-      min-width: 68px;
-      padding: 11px 14px;
-    }
-  }
-</style>
-    </div>
-  </div>
-</main>
-
-<script src="assets/js/site.js"></script>
-<script src="assets/js/site.js"></script>
-
-<script>
-  renderReviews('reviews-grid');
-
-  const feedbackForm = document.getElementById('feedback-form');
-  const feedbackStatus = document.getElementById('feedback-status');
-  const feedbackSubmitBtn = document.getElementById('feedback-submit-btn');
-
-  feedbackForm.addEventListener('submit', async function (event) {
-    event.preventDefault();
-
-    feedbackStatus.className = 'feedback-status';
-    feedbackStatus.textContent = 'Enviando feedback...';
-    feedbackSubmitBtn.disabled = true;
-    feedbackSubmitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
-
-    try {
-      const response = await fetch(feedbackForm.action, {
-        method: 'POST',
-        body: new FormData(feedbackForm),
-        headers: {
-          'Accept': 'application/json'
+      if (typeof renderReviews === "function") {
+        try {
+          renderReviews("reviews-grid");
+        } catch (error) {
+          if (reviewsGrid) {
+            reviewsGrid.innerHTML = '<div class="fb-empty-review">Não foi possível carregar os depoimentos automaticamente nesta versão da página.</div>';
+          }
         }
-      });
-
-      if (response.ok) {
-        feedbackStatus.className = 'feedback-status success';
-        feedbackStatus.textContent = 'Feedback enviado com sucesso.';
-        feedbackForm.reset();
-      } else {
-        const data = await response.json().catch(() => null);
-        const errorMessage =
-          data && data.errors && data.errors.length
-            ? data.errors.map(item => item.message).join(' ')
-            : 'Não foi possível enviar agora. Tente novamente.';
-
-        feedbackStatus.className = 'feedback-status error';
-        feedbackStatus.textContent = errorMessage;
+      } else if (reviewsGrid) {
+        reviewsGrid.innerHTML = '<div class="fb-empty-review">A grade de depoimentos está pronta. Se quiser, depois eu também posso te entregar uma versão com depoimentos fixos já embutidos no HTML.</div>';
       }
-    } catch (error) {
-      feedbackStatus.className = 'feedback-status error';
-      feedbackStatus.textContent = 'Erro de conexão. Verifique sua internet e tente novamente.';
-    } finally {
-      feedbackSubmitBtn.disabled = false;
-      feedbackSubmitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Enviar feedback';
-    }
-  });
-</script>
+
+      if (phoneInput) {
+        phoneInput.addEventListener("input", function (e) {
+          let value = e.target.value.replace(/\D/g, "").slice(0, 11);
+
+          if (value.length > 10) {
+            value = value.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, "($1) $2-$3");
+          } else if (value.length > 6) {
+            value = value.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, "($1) $2-$3");
+          } else if (value.length > 2) {
+            value = value.replace(/^(\d{2})(\d{0,5})/, "($1) $2");
+          } else if (value.length > 0) {
+            value = value.replace(/^(\d*)/, "($1");
+          }
+
+          e.target.value = value;
+        });
+      }
+
+      if (feedbackForm) {
+        feedbackForm.addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          feedbackStatus.className = "fb-status";
+          feedbackStatus.textContent = "Enviando feedback...";
+          feedbackSubmitBtn.disabled = true;
+          feedbackSubmitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+
+          try {
+            const response = await fetch(feedbackForm.action, {
+              method: "POST",
+              body: new FormData(feedbackForm),
+              headers: { "Accept": "application/json" }
+            });
+
+            if (response.ok) {
+              feedbackStatus.className = "fb-status success";
+              feedbackStatus.textContent = "Feedback enviado com sucesso.";
+              feedbackForm.reset();
+            } else {
+              const data = await response.json().catch(() => null);
+              const errorMessage =
+                data && data.errors && data.errors.length
+                  ? data.errors.map((item) => item.message).join(" ")
+                  : "Não foi possível enviar agora. Tente novamente.";
+
+              feedbackStatus.className = "fb-status error";
+              feedbackStatus.textContent = errorMessage;
+            }
+          } catch (error) {
+            feedbackStatus.className = "fb-status error";
+            feedbackStatus.textContent = "Erro de conexão. Verifique sua internet e tente novamente.";
+          } finally {
+            feedbackSubmitBtn.disabled = false;
+            feedbackSubmitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Enviar feedback';
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
